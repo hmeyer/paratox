@@ -16,7 +16,11 @@ Basics
 - ALL Packets have the same size (which size?) filled up with random bytes (before encryption) or zeros (after encryption)
 - communication is done UDP only, using [UDP hole punching](http://en.wikipedia.org/wiki/UDP_hole_punching)
 - NodeIDs are bound to IP via DHT (preferrable [Bamboo](http://bamboo-dht.org/), any other might work as well)
+- DHT accepts search requests: find XYZ might result in found XYY->1.2.3.4 (which implies XYZ does not exist)
 - Packets are Onion-Routed like [Tor](https://www.torproject.org/) does
+- new Nodes are found by searching for random node ids
+  - Problem: maybe Bob is locked in a net owned by Eve and Eve returns only Eves nodes
+  - Solution: Bob has to know multiple entry nodes, from each entry he asks for know online nodes from other entries. If those are returned as non-existent the respective entry node is marked flawed (maybe even published as flawed?)
 - AccountIDs are published like [Tor-Hidden-Services](https://www.torproject.org/docs/hidden-services.html.en)
 - if Bob is offline, the message to bob will be stored in a nodes close to Bobs AccountId
 - Packages will be acknowledged (all of them?)
