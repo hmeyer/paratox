@@ -21,7 +21,7 @@ Why paratox
   - and still: the server can tell who is talking to whom
 - Why not [TorChat](https://github.com/prof7bit/TorChat)?
   - I like the TorChat idea a lot. But:
-  - AFAIK there is not offline message delivery - both peers need to be online at the same time
+  - AFAIK there is no offline message delivery - both peers need to be online at the same time
   - Tor is a versatile tool for a multitude of purposes, therefore there a some security compromises that might weaken privacy:
     - if Eve is able to watch the whole network she might be able to follow a packet from node to node because of it's signature (size) and the timing of incoming and outgoing traffic of the nodes. This way Eve might be able to learn who Alice is talking to. And when.
 - Why not [BitMessage](https://bitmessage.org/)?
