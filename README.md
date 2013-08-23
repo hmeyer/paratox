@@ -3,6 +3,30 @@ paratox
 
 anonymous, secure communication for post democratic people
 
+Goals
+=====
+- enable private communication while Eve is watching
+  - Eve should not know that Alice and Bob are communicating with each other
+  - Eve should not know what Alice and Bob are talking about
+- have perfect forward secrecy whenever possible (afaik perfect forward secrecy is not possible if Bob wants to send a message to Alice, who is offline)
+- Bob and Alice should only not need to rely on single points of trust
+
+Why paratox
+===========
+- Why not Skype/Yahoo Chat/ICQ/WhatsApp/Jabber?
+  - the server always can tell who Alice is communicating with
+  - Traffic is usually SSL-encrypted. But only on the transport layer. The server decrypts all packets.
+  - OTR fixes the encryption problem, but introduces the requirement that both Alice and Bob have to be online at the same time
+    - PGP/GPG/[XEP-0027](http://xmpp.org/extensions/xep-0027.html) would fix this, but it's only available for a limited set of clients
+  - and still: the server can tell who is talking to whom
+- Why not [TorChat](https://github.com/prof7bit/TorChat)?
+  - I like the TorChat idea a lot. But:
+  - AFAIK there is not offline message delivery - both peers need to be online at the same time
+  - Tor is a versatile tool for a multitude of purposes, therefore there a some security compromises that might weaken privacy:
+    - if Eve is able to watch the whole network she might be able to follow a packet from node to node because of it's signature (size) and the timing of incoming and outgoing traffic of the nodes. This way Eve might be able to learn who Alice is talking to. And when.
+- Why not XYZ?
+  - I just didn't know XYZ is solving this issue. Please give me a hint in the [issues](https://github.com/hmeyer/paratox/issues)!
+
 
 Basics
 ======
@@ -25,8 +49,3 @@ Basics
 - if Bob is offline, the message to bob will be stored in a nodes close to Bobs AccountId
 - Packages will be acknowledged (all of them?)
 - each node sends noise traffic to its peers in order to obfuscate real traffic from noise
-
-Goals
-=====
-- AccountIDs should not be linkable to IPs
-- Nobodys except Alice and Bob should be able to know that Alice is communicating with Bob
