@@ -8,7 +8,7 @@ Basics
 ======
 - [ECC](http://en.wikipedia.org/wiki/Elliptic_curve_cryptography)  and [ECMQV](http://en.wikipedia.org/wiki/ECMQV) is used throughout paratox
 - whenever possibile session keys are generated using ECMQV and AES is used (establishing perfect forward secrecy)
-- ECC is used directly if one of the peers is not reachable, thus giving of perfect forward secrecy (THIS SHOULD BE MADE VISIBLE IN THE CLIENT)
+- ECC is used directly if one of the peers is not reachable, thus giving up perfect forward secrecy (THIS SHOULD BE MADE VISIBLE IN THE CLIENT)
 - IDs represent ECC public keys
 - Nodes have a temporary NodeID that is created randomly on each startup, and recreated once in a while
 - Accounts have an AccountID that is the identifier of the account
