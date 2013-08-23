@@ -24,6 +24,10 @@ Why paratox
   - AFAIK there is not offline message delivery - both peers need to be online at the same time
   - Tor is a versatile tool for a multitude of purposes, therefore there a some security compromises that might weaken privacy:
     - if Eve is able to watch the whole network she might be able to follow a packet from node to node because of it's signature (size) and the timing of incoming and outgoing traffic of the nodes. This way Eve might be able to learn who Alice is talking to. And when.
+- Why not [BitMessage](https://bitmessage.org/)?
+  - BitMessage is a quite clever take on the privacy aspects of personal information retrieval.
+  - While privacy and security should be quite high in theory, BitMessage creates a lot of traffic which is not desired e.g. in a mobile context.
+  - BitMessage uses proof of work, which will eat up your phones battery very quickly. Also it will cause your phone to crunch numbers for 2 min before sending a message out. An interactive chat might be difficult this way.
 - Why not XYZ?
   - I just didn't know XYZ is solving this issue. Please give me a hint in the [issues](https://github.com/hmeyer/paratox/issues)!
 
